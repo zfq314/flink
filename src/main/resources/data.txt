@@ -1,4 +1,0 @@
-hello flink
-hello scala
-hello spark
-hello world
