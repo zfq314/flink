@@ -14,15 +14,21 @@
         <flink-streaming.version>1.7.2</flink-streaming.version>
         <flink-connector-kafka.version>1.7.2</flink-connector-kafka.version>
         <flink-connector-redis.version>1.0</flink-connector-redis.version>
-        <flink-connector-elasticsearch6.version>1.7.2</flink-connector-elasticsearch6.version>
-        <flink-statebackend-rocksdb.version>1.7.2</flink-statebackend-rocksdb.version>
+        <flink-connector-elasticsearch6.version>1.7.2
+        </flink-connector-elasticsearch6.version>
+        <flink-statebackend-rocksdb.version>1.7.2
+        </flink-statebackend-rocksdb.version>
+        <flink.version>1.7.2</flink.version>
+        <hadoop.version>2.7.2</hadoop.version>
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
         <maven-assembly-plugin.verion>3.0.0</maven-assembly-plugin.verion>
         <flink-table.version>1.7.2</flink-table.version>
         <scala-maven-plugin.version>3.4.6</scala-maven-plugin.version>
-
+        <flink-connector-filesystem.version>1.7.2
+        </flink-connector-filesystem.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>UTF-8
+        </project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
 
@@ -70,8 +76,24 @@
             <artifactId>flink-table_2.11</artifactId>
             <version>${flink-table.version}</version>
         </dependency>
-    </dependencies>
+        <!--    连接hadoop    -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-filesystem_2.11</artifactId>
+            <version>${flink-connector-filesystem.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-hadoop-compatibility_2.11</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <!-- 该插件用于将Scala代码编译成class文件 -->
